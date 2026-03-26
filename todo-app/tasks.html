@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasks</title>
+</head>
+<body>
+
+<h1>Your Tasks</h1>
+<ul id="taskList"></ul>
+
+<script>
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  const list = document.getElementById("taskList");
+
+  tasks.forEach(task => {
+    const li = document.createElement("li");
+    li.textContent = task;
+    list.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
